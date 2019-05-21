@@ -1,0 +1,97 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css-form.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+</head>
+
+	
+<body class="login-bg">
+   <div class="container-fluid">
+        <div class="row float-tengah set-tengah m-t-5">
+            <div class="col-sm-3 shadow bg-putih radius-8">
+                <div class="row">
+                    <div class="col-sm-12 pd-10 bg-title">
+                        <span><i class="fa fa-file-text" aria-hidden="true"></i></span>
+                        <span >Denominate Application</span>
+                    </div>
+                </div>
+                <div class="row pd-15">
+                    <div class="col-sm-12 p-l-0">
+                        <input type="text" class="form-control form-control-sm" placeholder="Input" name="amt" id="amt">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" id="result">
+                        <div class="abu font-14 bg-result m-b-10 v100000"></div>
+                        <div class="abu font-14 bg-result m-b-10 v50000"></div>
+                        <div class="abu font-14 bg-result m-b-10 v20000"></div>
+                        <div class="abu font-14 bg-result m-b-10 v10000"></div>
+                        <div class="abu font-14 bg-result m-b-10 v5000"></div>
+                        <div class="abu font-14 bg-result m-b-10 v2000"></div>
+                        <div class="abu font-14 bg-result m-b-10 v1000"></div>
+                        <div class="abu font-14 bg-result m-b-10 v500"></div>
+                        <div class="abu font-14 bg-result m-b-10 v100"></div>
+                        <div class="abu font-14 bg-result m-b-10 v50"></div>
+                        <div class="abu font-14 bg-result m-b-10 sisa"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+</body>
+<script type="text/javascript"> 
+
+$('#result').hide();
+
+$(document).keypress(function(event){
+	var keycode = (event.keyCode ? event.keyCode : event.which);
+	if(keycode == '13'){
+		//var value = $("#amt").val().replace(/[^0-9\.]/g,'');
+		var strg = $("#amt").val();
+		var validCurrencyPattern = /^(Rp)?( )?((\d{1,3}){1}((\.\d{3})+(\,00)?)|\d+)$/;
+		var currencyCharsPattern = /[Rp\. ]+/g;
+		
+		function validateCurrency(strg) {
+			return strg.match(validCurrencyPattern);
+		}
+		function removeCurrencyChars(strg) {
+			strg = parseInt(strg.replace(currencyCharsPattern, ""));
+		}
+		if (validateCurrency(strg)){
+			var strg = strg || "";
+			var decimal = ',';
+			strg = strg.replace(/[^0-9$.,]/g, '');
+			if(strg.indexOf(',') > strg.indexOf('.')) decimal = ',';
+			if((strg.match(new RegExp("\\" + decimal,"g")) || []).length > 1) decimal="";
+			if (decimal !== "" && (strg.length - strg.indexOf(decimal) - 1 == 3) && strg.indexOf("0" + decimal)!==0) decimal = "";
+			strg = strg.replace(new RegExp("[^0-9$" + decimal + "]","g"), "");
+			strg = strg.replace('.', ',');
+			makeChange(parseFloat(strg));
+			$('#result').slideToggle('slow');
+			console.log('sadasd',strg);
+		} else {
+			alert ("Input tidak sesuai")
+			console.log("input tidak sesuai");
+		}
+	}
+});
+
+
+function makeChange(total) {
+	var amtArray = [100000, 50000, 20000, 10000, 5000, 2000, 1000, 500, 100, 50];
+
+	$.each(amtArray, function(i, v) {
+		var currentText = $(this).text();
+			$('.v'+v).text(parseInt(total / v) + ' x Rp' + amtArray[i]);
+            total = total % amtArray[i];
+    });
+	console.log('sisa', total);
+	$(".sisa").text('Left : ' + total);
+}
+</script>
+</html>              
+
+

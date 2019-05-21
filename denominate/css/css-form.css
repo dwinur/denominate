@@ -1,0 +1,106 @@
+body {
+    background: #fff;
+}
+
+.login-sm-4 {
+    background: rgba(255,255,255,0.4);
+    margin-top: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    padding: 10px;
+} 
+
+.set-div {
+    left: 50%;
+    top: 30%;
+    margin-left: -13%;
+    position: absolute;
+}
+
+.float-tengah {
+    display: flex;
+    justify-content: center;
+}
+
+.bg-biru {
+    background: #09c;
+}
+
+.pd-15 {
+    padding: 15px;
+}
+
+.putih {
+    color:#fff;
+}
+
+.abu {
+    color:#414141;
+}
+
+.m-t-5 {
+    margin-top:5%;
+}
+
+.font-14 {
+    font-size: 14px;
+}
+
+.shadow {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 8px 0px;
+}
+
+.bg-putih {
+    color: #fff;
+}
+
+.radius-8 {
+    border-radius: 8px;
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.btn-proses {
+    /* background: #42B549;
+    border: 1px solid #42B549; */
+    background: #59bddd;
+    border: 1px solid #2dbce9;
+    color: #fff;
+    font-size: 14px;
+    padding: 4px 10px;
+    margin-left: -10px;
+    border-radius: 4px;
+    width: 80px;
+}
+
+.p-l-0 {
+    padding-left: 0px;
+	padding-right: 0px;
+}
+
+.form-control {
+    box-shadow: 0px !important
+}
+
+.form-control:focus {
+    box-shadow: none !important
+}
+
+.bg-result {
+    background: #d4edeb;
+    border: 1px solid #afefea;
+    color: #38859f;
+    padding: 3px 10px;
+    border-radius: 3px;
+}
+
+.bg-title {
+    background: #298fb2;
+    padding: 15px;
+    border-radius: 5px 5px 0px 0px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}

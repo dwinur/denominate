@@ -1,0 +1,32 @@
+<h1>Money Redenomination(Rupiah Currency)</h1>
+
+Simple application that given a number of rupiahs will calculate the minimum number of rupiahs needed to make that amount 
+
+example :
+15000 = 1 x Rp10000, 1x Rp5000
+Rp3900 = 1x Rp2000, 1x Rp1000, 1x Rp500, 4x Rp100
+12510 = 1 x Rp10000, 1x Rp2000, 1x Rp500, left Rp10 (no available fraction)
+
+Examples of valid inputs with their canonical equivalents 18.215 (18215), Rp17500 (17500), Rp17.500,00 (17500), Rp 120.325 (120325), 005.000 (5000), 001000 (1000)
+
+Examples of invalid inputs: 17,500 (invalid separator),  2 500(invalid separator), 3000 Rp (valid character in wrong position), Rp (missing value)
+
+Account for only available current rupiah fractions 100000, 50000, 20000, 10000, 5000, 1000, 500, 100 and 50. 
+
+<h2>How to run this application?</h2>
+Application built using Html, CSS, Javascript, and JQuery. To run this application, you just open denominate.html/home.html from this repository.
+
+
+## Installation Steps
+
+### 1. Clone project
+Navigate to the terminal / cmd location to copy this project, and clone the project from github repository.
+```bash
+$ cd {YOUR_DIRECTORY}
+$ git clone https://github.com/dwinur/denominate.git
+$ cd denominate
+```
+
+### 2. Run / compile project
+Run or compile the project by using the <b>npm</b>
+Open the <b>denominate.html</b> or <b>home.html</b> file in the <b>denominate</b> folder, then open the file using a web browser.
