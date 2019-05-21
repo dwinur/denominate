@@ -15,6 +15,7 @@ Account for only available current rupiah fractions 100000, 50000, 20000, 10000,
 
 <h2>How to run this application?</h2>
 Application built using Html, CSS, Javascript, and JQuery. To run this application, you just open denominate.html/home.html from this repository.
+<b>Demo : </b> <a href="https://demo-dwi.herokuapp.com/" target="_blank">https://demo-dwi.herokuapp.com/</a>
 
 
 ## Installation Steps
